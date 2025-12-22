@@ -1,0 +1,121 @@
+.App {
+    min-height: 100vh;
+    background: linear-gradient(rgb(236, 143, 236), blue);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Existing Flashcard Styles --- */
+.flashcard {
+    perspective: 1000px;
+    height: 300px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.flashcard-front {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border: 3px solid #4a90e2;
+}
+
+.flashcard-back {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+/* next */
+
+.flashcard-front {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.flashcard-front:hover {
+  transform: scale(1.05); /* slightly zoom in */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); /* bigger shadow */
+  filter: brightness(1.2); /* brighten slightly on hover */
+}
+
+
+
+/* Buttons and cards */
+.topic-card { transition: all 0.3s ease; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
+.topic-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15);}
+.btn-gradient { background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; color: white; padding: 0.75rem 2rem; border-radius: 25px; transition: all 0.3s ease; }
+.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74,144,226,0.4); color:white; }
+
+/* --- New Animated Background --- */
+.blob {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  animation: floatBlob 16s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes floatBlob {
+  0% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(50px, 50px) scale(1.2); }
+  100% { transform: translate(-30px, 30px) scale(0.9); }
+}
+
+/* Floating particle overlay */
+.App::before {
+  content:'';
+  position:absolute; top:0; left:0;
+  width:100%; height:100%;
+  background: radial-gradient(circle, rgba(236, 220, 220, 0.2) 2px, transparent 1px);
+  background-size: 20px 20px;
+  animation: moveParticles 5s linear infinite;
+  z-index:0; pointer-events:none;
+}
+
+@keyframes moveParticles {
+  0% { background-position:0 0; }
+  100% { background-position:100px 100px; }
+}
+
+/* Sweeping grid lines */
+.App::after {
+  content:'';
+  position:absolute; top:0; left:0;
+  width:100%; height:100%;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 20px);
+  animation: sweepLines 20s linear infinite;
+  z-index:0; pointer-events:none;
+}
+
+@keyframes sweepLines {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 200px; }
+}
+
+

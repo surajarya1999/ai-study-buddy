@@ -1,0 +1,61 @@
+/* auth.css - import this in Login/Register components */
+.auth-wrap {
+  min-height: 80vh;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(99, 102, 241, 0.06));
+  padding: 3rem 1rem;
+}
+
+/* index.css ya alag css file mai daal do */
+.auth-card .form-control {
+  height: 38px; /* default ~48 hoti hai, ise kam kiya */
+  font-size: 14px; /* thoda chhota text */
+  border-radius: 8px; /* thoda smooth look */
+  padding: 5px 10px; /* andar ka space adjust */
+}
+.auth-card .btn-primary {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  border: none;
+  transition: all 0.4s ease-in-out;
+  background-size: 200% auto;
+}
+
+.auth-card .btn-primary:hover {
+  background-position: right center; /* roller jaisa effect */
+  transform: scale(1.05); /* thoda zoom effect */
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+
+
+.auth-card {
+  width: 420px;
+  max-width: calc(100% - 32px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,255,0.9));
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 35px rgba(2,6,23,0.08);
+  border: 1px solid rgba(13,110,253,0.06);
+}
+
+.auth-brand h3 {
+  margin: 0;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.auth-card .form-control {
+  border-radius: 8px;
+  padding: 0.9rem;
+  box-shadow: none;
+}
+
+.auth-card .btn-primary {
+  border-radius: 10px;
+  padding: 0.9rem;
+  font-weight: 600;
+}
+
+/* small responsive tweaks */
+@media (max-width: 480px) {
+  .auth-card { width: 92%; padding: 1.2rem; }
+}
