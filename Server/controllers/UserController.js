@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const cloudinary = require('cloudinary')
 
+
 // Configuration
 cloudinary.config({
   cloud_name: 'ddblbrvxl',

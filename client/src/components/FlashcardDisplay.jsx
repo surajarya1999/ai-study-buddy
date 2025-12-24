@@ -62,7 +62,7 @@ function Flashcarddisplay() {
           <div
             className="flashcard-front d-flex align-items-center justify-content-center p-2"
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.5)), url('/public/3.jpg')`,
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.5)), url('3.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               borderRadius: "15px",
